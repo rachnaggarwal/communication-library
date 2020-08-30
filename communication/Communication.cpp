@@ -7,16 +7,16 @@
 int Communication::Credentials(string wifi_name, string wifi_password){
 return acknowledge_number;
 }
-int Communication:: Connect(){
+int Communication::Connect(){
 return connection_status;
 }
-int Communication:: Feedback(){
+int Communication::Feedback(){
 return acknowledge_number;
 }
 char Communication::Write(write){
 return acknowledge_number;
 }
-string Communication:: Read(){
+string Communication::Read(){
 return read;
 }
 int Communication::Disconnect(){
