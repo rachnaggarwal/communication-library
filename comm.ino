@@ -25,7 +25,7 @@ if(read_byte == int_value)
 write_byte = cmt.Write(/*command you want to give after reading*/);
 while(write_byte!='y')
 {
- Serial.println(cmt.feedback()); //print 1 for error or 0 for still performing the task
+ Serial.println(cmt.Feedback()); //print 1 for error or 0 for still performing the task
 }
 }
  Serial.println(cmt.Disconnect());//disconnect and print connection_status
