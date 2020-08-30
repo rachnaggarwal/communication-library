@@ -4,7 +4,8 @@ Communication cmt;
 
 int read_bytes;
 char write_byte;
-
+string WifiName[]={"ET","EE","E1","EE","E2","EE","E3","EE"};
+string WifiPassword[]={"1234","5678","9101","1121","3141","5161","7181","9120"};
 void setup() {
   // put your setup code here, to run once:
 Serial.begin(115200);
@@ -14,7 +15,9 @@ void loop() {
 // put your main code here, to run repeatedly:
 /*we need to connect different node again so Connect function 
 will work in void loop not void setup*/
-cmt.Credentials("WifiName", "WifiPassword");
+for(int i=0;i<8;i++)
+{
+cmt.Credentials(WifiName[i], WifiPassword[i]);
 while(cmt.Connect()!=1)
 {
   //module keep connecting until return from Connect function is 1
@@ -29,4 +32,6 @@ while(write_byte!='y')
 }
 }
  Serial.println(cmt.Disconnect());//disconnect and print connection_status
+}
+ Serial.println("One cycle is completed");
 }
