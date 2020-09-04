@@ -1,27 +1,34 @@
 #ifndef Communication_h
 #define Communication_h
-
-#include "Wifi.h"
-#include "WifiClient.h"
-#include "WifiServer.h"
-#include "WifiUdp.h"
+#include "Arduino.h"
+#include "WiFi.h"
+#include "WiFiClient.h"
+#include "WiFiServer.h"
+#include "WiFiUdp.h"
 
 class Communication{
     public:
-    string wifi_name;
-    string wifi_password;
-    int connection_status;
+    String wifi_name;
+    String wifi_password;
+    int conn_status;
     int acknowledge_number;
-    string write;
-    string read;
+    char chr_write;
+    String st_read=" ";
+    WiFiServer server(const 80);
+    WiFiClient client; 
+     
 
-    int Credentials(string wifi_name, string wifi_password);
+
+    int retries = 0;
+    
+    void PinSetup();
+    int Credentials(String wifi_name,String wifi_password);
     int Connect();
     int Feedback();
-    char Write(write);
-    string Read();
+    char Write(char chr_write);
+    String Read();
     int Disconnect();
-
+    
 };
 
 #endif
