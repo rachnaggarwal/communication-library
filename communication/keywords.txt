@@ -11,13 +11,14 @@ Communication	KEYWORD1
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
-
+PinSetup    KEYWORD2
 Credentials	KEYWORD2
 Connect		KEYWORD2
 Feedback	KEYWORD2
 Write		KEYWORD2
 Read		KEYWORD2
 Disconnect	KEYWORD2
+
 
 
 #######################################
