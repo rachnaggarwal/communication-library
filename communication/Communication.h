@@ -8,24 +8,22 @@
 #include "SPI.h"
 
 class Communication{
-    public:
-    String wifi_name="";
-    String wifi_password="";
+    
+ public:
+    String wifi_name = "";
+    String wifi_password = "";
     int conn_status;
     int acknowledge_number;
     String chr_write="";
-    String st_read="";
+    String st_read=" ";
     WiFiClient client; 
-     
-
-
     int retries = 0;
     
     void PinSetup();
     int Credentials(String wifi_name,String wifi_password);
     int Connect();
     int Feedback();
-    char Write(String chr_write);
+    int Write(String chr_write);
     String Read();
     int Disconnect();
     
