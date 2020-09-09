@@ -22,7 +22,7 @@ while(cmt.Connect()!=1)
 read_bytes = cmt.Read();
 if(1==1) //read==value we want to read
 {
-write_byte = cmt.Write('h');
+write_byte = cmt.Write("hi");
 while(write_byte!='y')
 {
  Serial.println(cmt.Feedback()); //print 1 for error or 0 for still performing the task
