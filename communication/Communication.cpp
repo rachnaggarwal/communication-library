@@ -3,13 +3,12 @@
 #include "WiFiClient.h"
 #include "WiFiServer.h"
 #include "WiFiUdp.h"
+#include "SPI.h"
 #include "Communication.h"
-
+ WiFiServer server(80);
 void Communication::PinSetup(){
   //connecting server
     server.begin(); 
-    
-    //seting domain name system
     
     //connecting client to the server
     Serial.println("Connected to wifi");
@@ -78,7 +77,7 @@ int Communication::Feedback(){
 return acknowledge_number;
 }
 
-char Communication::Write(char_write){
+char Communication::Write(String char_write){
  client = server.available();
   if (client == true) {
        // read bytes from the incoming client and write them back
