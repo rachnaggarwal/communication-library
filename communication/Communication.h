@@ -5,16 +5,16 @@
 #include "WiFiClient.h"
 #include "WiFiServer.h"
 #include "WiFiUdp.h"
+#include "SPI.h"
 
 class Communication{
     public:
-    String wifi_name;
-    String wifi_password;
+    String wifi_name="";
+    String wifi_password="";
     int conn_status;
     int acknowledge_number;
-    char chr_write;
-    String st_read=" ";
-    WiFiServer server(const 80);
+    String chr_write="";
+    String st_read="";
     WiFiClient client; 
      
 
@@ -25,10 +25,9 @@ class Communication{
     int Credentials(String wifi_name,String wifi_password);
     int Connect();
     int Feedback();
-    char Write(char chr_write);
+    char Write(String chr_write);
     String Read();
     int Disconnect();
     
 };
-
 #endif
